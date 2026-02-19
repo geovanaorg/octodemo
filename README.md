@@ -7,7 +7,7 @@ Welcome to the OctoCAT Supply Website - your go-to demo for showcasing the incre
 > [!NOTE]
 > For a walkthrough of all demos, check out the [Demo Walkthroughs](./demo/walkthroughs/README.md).
 
-## 🏗️ Architecture
+## 🏗️ Architecture 
 
 The application is built using modern TypeScript with a clean separation of concerns:
 
