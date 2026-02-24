@@ -18,13 +18,18 @@ export default function Cart() {
   const { darkMode } = useTheme();
   const [products, setProducts] = useState<Product[]>([]);
 
+  const hasItems = cartItems.length > 0;
+
   useEffect(() => {
-    if (cartItems.length === 0) return;
+    if (!hasItems) {
+      setProducts([]);
+      return;
+    }
     axios
       .get<Product[]>(`${api.baseURL}${api.endpoints.products}`)
       .then((res) => setProducts(res.data))
       .catch(() => setProducts([]));
-  }, [cartItems.length]);
+  }, [hasItems]);
 
   const getProduct = (productId: number) => products.find((p) => p.productId === productId);
 
